@@ -1,14 +1,9 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-
+import { Login } from "./components/Login";
 function App() {
     return (
-        <>
-            <Button variant="outlined" color="secondary">
-                Hello world
-            </Button>
-            <TextField id="user" label="User Name" variant="standard" />
-        </>
+        <div className="bg-dark-100 min-h-screen flex flex-col justify-center items-center">
+            <Login />;
+        </div>
     );
 }
 
