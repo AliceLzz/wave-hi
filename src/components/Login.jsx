@@ -1,10 +1,4 @@
-import {
-    Card,
-    Input,
-    Checkbox,
-    Button,
-    Typography,
-} from "@material-tailwind/react";
+import { Card, Input, Button, Typography } from "@material-tailwind/react";
 
 export function Login() {
     return (
@@ -23,6 +17,7 @@ export function Login() {
                             variant="outlined"
                             label="Email"
                             color="white"
+                            required
                         />
                         <Typography
                             variant="small"
@@ -50,11 +45,13 @@ export function Login() {
                         variant="outlined"
                         label="Password"
                         color="white"
+                        required
                     />
                 </div>
                 <Button
-                    className="mt-6 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent"
+                    className="mt-6 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent focus:ring focus:ring-primary-100"
                     fullWidth
+                    type="submit"
                 >
                     Log in
                 </Button>
