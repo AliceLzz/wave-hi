@@ -1,13 +1,22 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
-
-export function Login() {
+import { IconButton } from "@material-tailwind/react";
+import arrow from "../img/Union.svg";
+export function Register() {
     return (
         <Card color="transparent" shadow={true} className="items-center">
+            <a href="#" className="self-start">
+                <IconButton
+                    variant="text"
+                    className="rounded-full active:bg-dark-100"
+                >
+                    <img src={arrow} alt="arrow to go back" className="w-8" />
+                </IconButton>
+            </a>
             <Typography variant="h3" className="text-light-100 self-start">
-                Log in
+                Register
             </Typography>
             <Typography color="gray" className="mt-1 font-normal">
-                Welcome again!! Enter your details to login.
+                Nice to meet you! Enter your details to register.
             </Typography>
             <form className="mt-8 mb-2 w-80 sm:w-96">
                 <div className="mb-1 flex flex-col gap-6">
@@ -49,23 +58,12 @@ export function Login() {
                     />
                 </div>
                 <Button
-                    className="mt-6 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent focus:ring focus:ring-primary-100"
+                    className="mt-6 bg-primary-100 text-dark-100 shadow-md shadow-secondary-100/10 hover:shadow-lg hover:shadow-secondary-100/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                     fullWidth
                     type="submit"
                 >
-                    Log in
+                    Next
                 </Button>
-                <Typography
-                    color="gray"
-                    className="mt-4 text-center font-normal"
-                >
-                    <a
-                        href="#"
-                        className="font-medium text-light-100 underline"
-                    >
-                        Forget Password
-                    </a>
-                </Typography>
             </form>
         </Card>
     );
