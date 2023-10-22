@@ -5,10 +5,11 @@ import { Profile } from "./components/Profile";
 import { Chat } from "./components/Chat";
 import { Conversation } from "./components/Conversation";
 import { Search } from "./components/Search";
+import {Text} from "./components/Text";
 function App() {
     return (
         <div className="bg-dark-100 min-h-screen flex flex-col justify-center items-center">
-            <Search />;
+            <Text text="ola que tal"/>;
         </div>
     );
 }
