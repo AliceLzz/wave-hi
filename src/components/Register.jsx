@@ -12,7 +12,7 @@ export function Register() {
                     <img src={arrow} alt="arrow to go back" className="w-8" />
                 </IconButton>
             </a>
-            <Typography variant="h3" className="text-light-100 self-start">
+            <Typography variant="h3" className="text-light-100">
                 Register
             </Typography>
             <Typography color="gray" className="mt-1 font-normal">
