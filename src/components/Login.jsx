@@ -3,7 +3,7 @@ import { Card, Input, Button, Typography } from "@material-tailwind/react";
 export function Login() {
     return (
         <Card color="transparent" shadow={true} className="items-center">
-            <Typography variant="h3" className="text-light-100 self-start">
+            <Typography variant="h3" className="text-light-100">
                 Log in
             </Typography>
             <Typography color="gray" className="mt-1 font-normal">
