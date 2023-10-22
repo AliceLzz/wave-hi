@@ -2,12 +2,9 @@ import { Landing } from "./components/Landing";
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Profile } from "./components/Profile";
+import { Home } from "./components/Home";
 function App() {
-    return (
-        <div className="bg-dark-100 min-h-screen flex flex-col justify-center items-center">
-            <Profile />;
-        </div>
-    );
+    return <Home />;
 }
 
 export default App;
