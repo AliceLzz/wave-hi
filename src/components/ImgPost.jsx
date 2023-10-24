@@ -1,3 +1,4 @@
+//Component for a post with image and text
 import { Typography, IconButton } from "@material-tailwind/react";
 import { AiOutlineHeart } from "react-icons/ai";
 

@@ -1,3 +1,4 @@
+//Component kind of footer with user options when is already loged
 import {
     Navbar,
     Typography,

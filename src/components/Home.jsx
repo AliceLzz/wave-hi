@@ -1,3 +1,4 @@
+//Component to show the feed or wall, main component after login
 import { ImgPost } from "./ImgPost";
 export function Home() {
     return (
