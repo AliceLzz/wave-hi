@@ -1,17 +1,25 @@
-import { Card, Input, Button, Typography } from "@material-tailwind/react";
-import { IconButton } from "@material-tailwind/react";
+//Component to show the form to sign up
+import {
+    Card,
+    Input,
+    Button,
+    Typography,
+    IconButton,
+} from "@material-tailwind/react";
+
 import arrow from "../img/Union.svg";
+import { Link } from "react-router-dom";
 export function Register() {
     return (
         <Card color="transparent" shadow={true} className="items-center">
-            <a href="#" className="self-start">
+            <Link to={"/"} className="w-full">
                 <IconButton
                     variant="text"
                     className="rounded-full active:bg-dark-100"
                 >
                     <img src={arrow} alt="arrow to go back" className="w-8" />
                 </IconButton>
-            </a>
+            </Link>
             <Typography variant="h3" className="text-light-100">
                 Register
             </Typography>

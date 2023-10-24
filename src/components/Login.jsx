@@ -1,8 +1,25 @@
-import { Card, Input, Button, Typography } from "@material-tailwind/react";
+//Component to show the form to login
+import {
+    Card,
+    Input,
+    Button,
+    Typography,
+    IconButton,
+} from "@material-tailwind/react";
+import { Link } from "react-router-dom";
+import arrow from "../img/Union.svg";
 
 export function Login() {
     return (
         <Card color="transparent" shadow={true} className="items-center">
+            <Link to={"/"} className="w-full">
+                <IconButton
+                    variant="text"
+                    className="rounded-full active:bg-dark-100"
+                >
+                    <img src={arrow} alt="arrow to go back" className="w-8" />
+                </IconButton>
+            </Link>
             <Typography variant="h3" className="text-light-100">
                 Log in
             </Typography>
