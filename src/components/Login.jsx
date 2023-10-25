@@ -8,8 +8,29 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 import arrow from "../img/Union.svg";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export function Login() {
+export function Login({ handleLogin, user }) {
+    const [loginData, setLoginData] = useState({ userName: "", password: "" });
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user != "") {
+            navigate("/wave-hi");
+        }
+    }, [user]);
+
+    function fillData(e) {
+        setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    }
+    function onSubmit(e) {
+        e.preventDefault();
+        if (loginData.user !== "" && loginData.password !== "") {
+            //console.log(loginData);
+            handleLogin(loginData);
+        }
+    }
     return (
         <Card color="transparent" shadow={true} className="items-center">
             <Link to={"/"} className="w-full">
@@ -34,6 +55,10 @@ export function Login() {
                             variant="outlined"
                             label="Email"
                             color="white"
+                            id="userMail"
+                            name="userName"
+                            onChange={fillData}
+                            value={loginData.user}
                             required
                         />
                         <Typography
@@ -62,13 +87,17 @@ export function Login() {
                         variant="outlined"
                         label="Password"
                         color="white"
+                        id="password"
+                        name="password"
+                        onChange={fillData}
+                        value={loginData.password}
                         required
                     />
                 </div>
                 <Button
                     className="mt-6 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent focus:ring focus:ring-primary-100"
                     fullWidth
-                    type="submit"
+                    onClick={onSubmit}
                 >
                     Log in
                 </Button>

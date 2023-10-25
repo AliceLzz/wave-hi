@@ -15,14 +15,6 @@ import img9 from "../img/img-9.png";
 export function Search() {
     return (
         <Card color="transparent" shadow={true} className="items-center p-4">
-            <a href="#" className="self-start">
-                <IconButton
-                    variant="text"
-                    className="rounded-full active:bg-dark-100"
-                >
-                    <img src={arrow} alt="arrow to go back" className="w-8" />
-                </IconButton>
-            </a>
             <Typography variant="h3" className="text-light-100 mb-10">
                 Search
             </Typography>

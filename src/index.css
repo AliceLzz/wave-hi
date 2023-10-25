@@ -3,22 +3,9 @@
 @tailwind utilities;
 
 @layer utilities {
-    .masonry {
-        column-gap: 1.5em;
-        column-count: 1;
-    }
 
-    .masonry-sm {
-        column-gap: 1.5em;
-        column-count: 2;
-    }
-
-    .masonry-md {
-        column-gap: 1.5em;
-        column-count: 3;
-    }
-
-    .break-inside {
-        break-inside: avoid;
+    /*Hide scrollbar in message section*/
+    ::-webkit-scrollbar {
+        width: 0;
     }
 }
