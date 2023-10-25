@@ -8,6 +8,7 @@ import { Home } from "./components/Home";
 import { Search } from "./components/Search";
 import { Chat } from "./components/Chat";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { DrawerPlacement } from "./components/DrawerPlacement";
 
 function App() {
     const router = createBrowserRouter([
@@ -41,6 +42,10 @@ function App() {
                         {
                             path: "chat",
                             element: <Chat />,
+                        },
+                        {
+                            path: "post",
+                            element: <DrawerPlacement />,
                         },
                     ],
                 },
