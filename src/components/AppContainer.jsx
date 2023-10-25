@@ -1,9 +1,11 @@
 import { Outlet } from "react-router-dom";
+import { Tabbar } from "./Tabbar";
 
-export function AppContainer() {
+export function AppContainer({ users }) {
     return (
         <div>
             <Outlet />
+            <Tabbar users={users} />
         </div>
     );
 }

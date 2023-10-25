@@ -2,7 +2,7 @@
 import { ImgPost } from "./ImgPost";
 export function Home() {
     return (
-        <div className="columns-2 gap-8 md:columns-3 lg:columns-4 [&>figure:not(:first-child)]:mt-8">
+        <div className="columns-2 gap-3 md:columns-3 lg:columns-4 [&>figure:not(:first-child)]:mt-3">
             <ImgPost
                 src="https://source.unsplash.com/bYuI23mnmDQ"
                 caption="Quiero decir en este post que soy un hombre adios"

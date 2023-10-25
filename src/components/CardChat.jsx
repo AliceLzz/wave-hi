@@ -1,31 +1,43 @@
 //Component to show each person conected
-import { CardHeader, Typography, Avatar } from "@material-tailwind/react";
+import {
+    ListItem,
+    ListItemPrefix,
+    Avatar,
+    Typography,
+    Badge,
+} from "@material-tailwind/react";
 import imgProfile from "../img/Img-Profile.svg";
 
-export function CardChat() {
+export function CardChat({ user, handlecurrentChat, openDrawerBottom }) {
     return (
-        <CardHeader
-            color="transparent"
-            floated={false}
-            shadow={false}
-            className="flex items-start gap-4 p-2 w-full border border-gray-700"
+        <ListItem
+            onClick={() => {
+                handlecurrentChat(user.userID);
+                openDrawerBottom();
+            }}
         >
-            <Avatar
-                size="lg"
-                variant="circular"
-                src={imgProfile}
-                alt="tania andrew"
-            />
-            <div className="flex w-full flex-col gap-0.5">
-                <div className="flex items-center justify-between">
+            <ListItemPrefix>
+                <Avatar variant="circular" alt="candice" src={imgProfile} />
+            </ListItemPrefix>
+            <div>
+                {user.hasNewMessages ? (
+                    <Badge>
+                        <Typography variant="h5" className="text-light-100">
+                            {user.username}
+                        </Typography>
+                    </Badge>
+                ) : (
                     <Typography variant="h5" className="text-light-100">
-                        Tania Andrew
+                        {user.username}
                     </Typography>
-                </div>
-                <Typography color="gray" className="mt-1 font-normal">
-                    Hi, nice to meet you!
-                </Typography>
+                )}
+
+                {/* <Typography
+                    variant="small"
+                    color="gray"
+                    className="font-normal"
+                ></Typography> This is for pre view the message in a V2*/}
             </div>
-        </CardHeader>
+        </ListItem>
     );
 }
