@@ -179,10 +179,6 @@ function App() {
                                 />
                             ),
                         },
-                        {
-                            path: "post",
-                            element: <DrawerPlacement />,
-                        },
                     ],
                 },
             ],
