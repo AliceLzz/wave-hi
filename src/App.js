@@ -136,7 +136,7 @@ function App() {
         });
     }
     function handleSendPost(formData) {
-        fetch("http://localhost:5000/post", {
+        fetch("https://mtk5jvf5-5000.usw2.devtunnels.ms/post", {
             method: "POST",
             body: formData,
         })

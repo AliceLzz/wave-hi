@@ -34,7 +34,7 @@ export function Home({ posts }) {
                 if (post.img !== "") {
                     return (
                         <ImgPost
-                            src={`http://localhost:5000/data/imgs/${post.img}`}
+                            src={`https://mtk5jvf5-5000.usw2.devtunnels.ms/data/imgs/${post.img}`}
                             caption={post.text}
                             owner={post.owner}
                             key={index}
