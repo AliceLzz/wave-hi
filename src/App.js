@@ -10,7 +10,6 @@ import { Chat } from "./components/Chat";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { socket } from "./socket";
-import { ConnectionManager } from "./components/ConnectionManager";
 
 function App() {
     const [isConnected, setIsConnected] = useState(socket.connected);
