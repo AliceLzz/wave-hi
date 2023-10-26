@@ -11,7 +11,7 @@ export function Landing() {
                 variant="h1"
                 className="text-tertiary-100 self-start font-black"
             >
-                WAVE<spam className="text-primary-100">-HI</spam>
+                WAVE<span className="text-primary-100">-HI</span>
             </Typography>
             <Link to={"login"} className="w-full">
                 <Button

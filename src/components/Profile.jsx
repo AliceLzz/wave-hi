@@ -1,5 +1,5 @@
 import { Card, Button, Typography } from "@material-tailwind/react";
-import { IconButton } from "@material-tailwind/react";
+import { socket } from "../socket";
 import imgProfile from "../img/Img-Profile.svg";
 import img1 from "../img/img-1.png";
 import img2 from "../img/img-2.png";
@@ -14,6 +14,9 @@ import img9 from "../img/img-9.png";
 import arrow from "../img/Union.svg";
 
 export function Profile() {
+    function disconnect() {
+        socket.disconnect();
+    }
     return (
         <Card color="transparent" shadow={true} className="p-4 items-center">
             <img src={imgProfile} />
@@ -25,15 +28,16 @@ export function Profile() {
             </Typography>
             <Button
                 className="mt-6 w-40 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent focus:ring focus:ring-primary-100"
-                type="submit"
+                type="button"
             >
                 Follow Me
             </Button>
             <Button
                 className="mt-2 mb-4 w-40 border border-primary-100 text-primary-100 hover:opacity-75 active:opacity-[0.85] bg-transparent focus:ring focus:ring-primary-100"
-                type="submit"
+                type="button"
+                onClick={disconnect}
             >
-                Message
+                Log out
             </Button>
 
             <div className="mt-2 gap-2 grid grid-cols-3">
