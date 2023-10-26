@@ -1,7 +1,5 @@
 //Component to make a search of users or post
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
-import { IconButton } from "@material-tailwind/react";
-import arrow from "../img/Union.svg";
 import img1 from "../img/img-1.png";
 import img2 from "../img/img-2.png";
 import img3 from "../img/img-3.png";

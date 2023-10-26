@@ -1,3 +1,4 @@
+//Component to render the other components (landing, login and register) when the user is not logged 
 import { Outlet } from "react-router-dom";
 
 export function MainContainer() {

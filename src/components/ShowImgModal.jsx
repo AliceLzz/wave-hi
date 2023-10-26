@@ -1,3 +1,4 @@
+//Component to show a larger image
 import {
     Dialog,
     DialogHeader,
