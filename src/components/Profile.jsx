@@ -1,3 +1,4 @@
+// Component to show information about the users, their post and actions to follow and send a message
 import { Card, Button, Typography } from "@material-tailwind/react";
 import { socket } from "../socket";
 import imgProfile from "../img/Img-Profile.svg";

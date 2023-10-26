@@ -1,3 +1,4 @@
+// Component for a post with image and text
 import { Textarea, Button } from "@material-tailwind/react";
 import { useState } from "react";
 
