@@ -2,16 +2,22 @@
 import { IconButton, Typography } from "@material-tailwind/react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export function Text({ text }) {
+export function Text({ caption, date }) {
+    let formatDate = new Date(parseInt(date));
     return (
-        <div className="relative h-96 w-full bg-gray-900 rounded-xl">
-            <div className="absolute w-10/12 flex left-2/4 justify-between -translate-x-2/4 top-2/4 -translate-y-2/4 ">
+        <div className="relative w-full h-40 ">
+            <div className="border absolute flex top-2/4 -translate-y-2/4 w-10/12 left-2/4 -translate-x-2/4 justify-between rounded-xl  bg-dark-100/75 py-3 px-5 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm gap-1">
                 <div>
-                    <Typography variant="h5" className="text-light-100">
-                        {text}
+                    <Typography color="white" className="text-xs">
+                        {caption}
                     </Typography>
-                    <Typography color="gray" className="text-light-100 mt-4">
-                        20 July 2022
+                    <Typography
+                        color="white"
+                        className="text-[9px] font-normal"
+                    >
+                        {`${formatDate.getFullYear()}/${
+                            formatDate.getMonth() + 1
+                        }/${formatDate.getDate()}-${formatDate.getHours()}:${formatDate.getMinutes()}`}
                     </Typography>
                 </div>
                 <IconButton variant="text" color="white">

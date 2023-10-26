@@ -15,7 +15,7 @@ import { ConnectionManager } from "./components/ConnectionManager";
 function App() {
     const [isConnected, setIsConnected] = useState(socket.connected);
     const [user, setUser] = useState("");
-    const [senderUser, setSenderUser] = useState("");
+    const [posts, setPosts] = useState(null);
     const [friendsListObj, setFriendsListObj] = useState({});
     const [currentChat, setCurrentChat] = useState("");
 
@@ -32,6 +32,23 @@ function App() {
             socket.off("disconnect");
         };
     }, []);
+
+    useEffect(() => {
+        socket.on("post", (posts) => {
+            console.log(posts);
+            setPosts(posts);
+        });
+
+        socket.on("newPost", (posts) => {
+            console.log(posts);
+            setPosts(posts);
+        });
+
+        return () => {
+            socket.off("post");
+            socket.off("newPost");
+        };
+    }, [posts]);
 
     useEffect(() => {
         //Socket function to receive friend list availables upon connection
@@ -158,7 +175,7 @@ function App() {
                     path: "wave-hi",
                     element: <AppContainer users={friendsListObj} />,
                     children: [
-                        { index: true, element: <Home /> },
+                        { index: true, element: <Home posts={posts} /> },
                         {
                             path: "profile",
                             element: <Profile />,
