@@ -35,12 +35,10 @@ function App() {
 
     useEffect(() => {
         socket.on("post", (posts) => {
-            console.log(posts);
             setPosts(posts);
         });
 
         socket.on("newPost", (posts) => {
-            console.log(posts);
             setPosts(posts);
         });
 
@@ -62,8 +60,6 @@ function App() {
                 list[user.userID] = user;
             });
             setFriendsListObj(list);
-            //setFriendsListArray(Object.values(list));
-            console.log("Onusers");
         });
 
         //Socket function to handle if you have two session active or if the password is wrong
@@ -78,38 +74,23 @@ function App() {
 
         //Socket function to update friends list with a new user
         socket.on("user_connected", (user) => {
-            //let list = { ...friendsListObj, [user.userID]: user };
             setFriendsListObj((prev) => {
                 return { ...prev, [user.userID]: user };
             });
-            //setFriendsListArray(Object.values(list));
-            console.log("Onuser_connected");
         });
 
         //Socket function to remove an user from the friend list availables
         socket.on("user_disconnected", (user) => {
-            console.log(user.userID);
             let friendsList = { ...friendsListObj };
-            console.log(friendsList);
             delete friendsList[user.userID];
-            console.log(friendsList);
             setFriendsListObj(friendsList);
             if (user.userID === currentChat) {
                 setCurrentChat("");
             }
-            //setFriendsListArray(Object.values(friendsList));
         });
         //Socket function to receive private message
         socket.on("private_message", ({ content, from }) => {
-            console.log(content, from);
             let user = friendsListObj[from];
-            console.log(user);
-            /* for (const key in friendsListObj) {
-                console.log(key);
-                if (friendsListObj[key].userID === from) {
-                    console.log("yeeeey!!");
-                }
-            } */
 
             if (user.hasOwnProperty("messages")) {
                 user.messages.push({ content, fromSelf: false });

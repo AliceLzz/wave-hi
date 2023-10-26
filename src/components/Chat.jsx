@@ -29,18 +29,20 @@ export function Chat({
             className="items-center p-4 w-screen"
         >
             <Typography variant="h3" className="text-light-100 self-center">
-                Chat
+                Chats
             </Typography>
             <List>
                 {Object.values(friendsListObj).map((user) => {
-                    return (
-                        <CardChat
-                            user={user}
-                            handlecurrentChat={handlecurrentChat}
-                            key={user.userID}
-                            openDrawerBottom={openDrawerBottom}
-                        />
-                    );
+                    if (!user.self) {
+                        return (
+                            <CardChat
+                                user={user}
+                                handlecurrentChat={handlecurrentChat}
+                                key={user.userID}
+                                openDrawerBottom={openDrawerBottom}
+                            />
+                        );
+                    }
                 })}
             </List>
 
