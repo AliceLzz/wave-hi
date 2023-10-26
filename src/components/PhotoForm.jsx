@@ -15,7 +15,6 @@ export function PhotoForm({ userName, handleSendPost }) {
     }
 
     function upload(e) {
-        console.log(e.target);
         e.preventDefault();
         const formData = new FormData();
         formData.append("text", text);

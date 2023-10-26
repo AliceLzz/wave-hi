@@ -27,7 +27,6 @@ export function Login({ handleLogin, user }) {
     function onSubmit(e) {
         e.preventDefault();
         if (loginData.user !== "" && loginData.password !== "") {
-            //console.log(loginData);
             handleLogin(loginData);
         }
     }

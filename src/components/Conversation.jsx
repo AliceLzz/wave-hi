@@ -57,7 +57,7 @@ export function Conversation({
                     variant="h3"
                     className="text-light-100 self-center mb-8"
                 >
-                    {userChat?.username}
+                    {userChat ? userChat.username : ""}
                 </Typography>
             </Card>
             <div className="mt-5 overflow-y-auto h-4/6">
