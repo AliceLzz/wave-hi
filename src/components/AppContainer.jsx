@@ -1,3 +1,4 @@
+//Component to render the other components when the user is logged 
 import { Outlet } from "react-router-dom";
 import { Tabbar } from "./Tabbar";
 import { DrawerPlacement } from "./DrawerPlacement";
