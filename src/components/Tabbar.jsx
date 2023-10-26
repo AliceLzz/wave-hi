@@ -6,7 +6,7 @@ import { GoPerson } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export function Tabbar({ users }) {
+export function Tabbar({ users, openDrawerBottom }) {
     const [newMsj, setNewMsj] = useState(false);
     useEffect(() => {
         Object.values(users).forEach((user) => {
@@ -36,14 +36,15 @@ export function Tabbar({ users }) {
                     </IconButton>
                 </Link>
                 {/* Button to Add post */}
-                <Link to={"/wave-hi/"}>
-                    <IconButton
-                        variant="filled"
-                        className="bg-primary-100 text-dark-100 w-24 max-w-none rounded-full"
-                    >
-                        <AiOutlinePlus className="h-4 w-4" />
-                    </IconButton>
-                </Link>
+
+                <IconButton
+                    variant="filled"
+                    className="bg-primary-100 text-dark-100 w-24 max-w-none rounded-full"
+                    onClick={openDrawerBottom}
+                >
+                    <AiOutlinePlus className="h-4 w-4" />
+                </IconButton>
+
                 {/* Button to Chats */}
                 <Link to={"/wave-hi/chat"}>
                     <IconButton variant="text" color="white">
