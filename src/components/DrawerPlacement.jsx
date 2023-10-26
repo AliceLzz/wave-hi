@@ -1,3 +1,4 @@
+//Component to see a modal where you can do a post
 import React from "react";
 import { Drawer, Typography, IconButton } from "@material-tailwind/react";
 
