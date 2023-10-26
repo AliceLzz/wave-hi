@@ -154,6 +154,18 @@ function App() {
             to: currentChat,
         });
     }
+    function handleSendPost(formData) {
+        fetch("http://localhost:5000/post", {
+            method: "POST",
+            body: formData,
+        })
+            .then((response) => {
+                alert("Success");
+            })
+            .catch((error) => {
+                console.log("Somethig is wrong with server", error);
+            });
+    }
 
     // This is to create the router tree and to know which component we need to render
     const router = createBrowserRouter([
@@ -173,7 +185,13 @@ function App() {
                 },
                 {
                     path: "wave-hi",
-                    element: <AppContainer users={friendsListObj} />,
+                    element: (
+                        <AppContainer
+                            users={friendsListObj}
+                            userName={user}
+                            handleSendPost={handleSendPost}
+                        />
+                    ),
                     children: [
                         { index: true, element: <Home posts={posts} /> },
                         {
