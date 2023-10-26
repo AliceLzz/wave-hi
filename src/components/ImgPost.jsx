@@ -11,7 +11,7 @@ export function ImgPost({ src, caption, date }) {
                 src={src}
                 alt={caption}
             />
-            <figcaption className="absolute bottom-4 flex w-10/12 left-2/4 -translate-x-2/4 justify-between rounded-xl  bg-dark-100/75 py-3 px-5 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm gap-1">
+            <figcaption className="absolute bottom-3 flex w-11/12 left-2/4 -translate-x-2/4 justify-between rounded-xl  bg-dark-100/75 py-2 px-3 shadow-lg shadow-black/5 saturate-200 backdrop-blur-sm gap-1">
                 <div>
                     <Typography color="white" className="text-xs">
                         {caption}
@@ -25,7 +25,7 @@ export function ImgPost({ src, caption, date }) {
                         }/${formatDate.getDate()}-${formatDate.getHours()}:${formatDate.getMinutes()}`}
                     </Typography>
                 </div>
-                <IconButton variant="text" color="white">
+                <IconButton variant="text" color="white" className="p-0">
                     <AiOutlineHeart className="h-4 w-4" />
                 </IconButton>
             </figcaption>

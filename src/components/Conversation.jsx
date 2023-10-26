@@ -67,18 +67,20 @@ export function Conversation({
                 {/* This div is to create a reference and move screen view to see it */}
                 <div ref={ref} id="messagesContainer"></div>
             </div>
-            <div className="absolute bottom-2 left-2 right-2 flex ">
+            <div className="absolute bottom-2 left-2 right-2 ">
                 <input
                     id="input"
+                    variant="outlined"
+                    color="white"
                     autoComplete="off"
                     onChange={handleInput}
                     value={msj}
-                    className="border rounded-md w-40 flex-grow h-12"
+                    className="p-2 rounded-md w-10/12 flex-grow h-12 bg-black text-light-100 focus:border-primary-100 border-2 focus:outline-none"
                 />
                 <button
                     id="sendMsj"
                     onClick={sendButton}
-                    className="border flex-grow-0 w-10"
+                    className="mt-6 w-2/12 h-12 border rounded-md bg-primary-100 text-dark-100 shadow-md shadow-secondary-100/10 hover:shadow-lg hover:shadow-secondary-100/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none"
                 >
                     Send
                 </button>
