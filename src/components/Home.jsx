@@ -4,7 +4,7 @@ import { Text } from "./Text";
 
 export function Home({ posts }) {
     return (
-        <div className="columns-2 gap-3 md:columns-3 lg:columns-4 [&>figure:not(:first-child)]:mt-3">
+        <div className="columns-2 gap-3 mb-20 md:columns-3 lg:columns-4 [&>figure:not(:first-child)]:mt-3">
             <ImgPost
                 src="https://source.unsplash.com/bYuI23mnmDQ"
                 caption="Quiero decir en este post que soy un hombre adios"
@@ -23,7 +23,7 @@ export function Home({ posts }) {
                         <ImgPost
                             src={`http://localhost:5000/data/imgs/${post.img}`}
                             caption={post.text}
-                            date={post.date}
+                            owner={post.owner}
                             key={index}
                         />
                     );
@@ -31,7 +31,7 @@ export function Home({ posts }) {
                     return (
                         <Text
                             caption={post.text}
-                            date={post.date}
+                            owner={post.owner}
                             key={index}
                         />
                     );

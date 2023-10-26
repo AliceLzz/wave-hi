@@ -1,14 +1,14 @@
 import React from "react";
-import {
-    Drawer,
-    Button,
-    Typography,
-    IconButton,
-} from "@material-tailwind/react";
-import { ButtonGroupDefault } from "./ButtonGroupDefault";
+import { Drawer, Typography, IconButton } from "@material-tailwind/react";
+
 import { PhotoForm } from "./PhotoForm";
 
-export function DrawerPlacement({ openBottom, closeDrawerBottom }) {
+export function DrawerPlacement({
+    openBottom,
+    closeDrawerBottom,
+    userName,
+    handleSendPost,
+}) {
     return (
         <Drawer
             placement="bottom"
@@ -41,8 +41,7 @@ export function DrawerPlacement({ openBottom, closeDrawerBottom }) {
                     </svg>
                 </IconButton>
             </div>
-            <ButtonGroupDefault />
-            <PhotoForm />
+            <PhotoForm userName={userName} handleSendPost={handleSendPost} />
         </Drawer>
     );
 }

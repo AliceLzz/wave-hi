@@ -2,8 +2,8 @@
 import { Typography, IconButton } from "@material-tailwind/react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export function ImgPost({ src, caption, date }) {
-    let formatDate = new Date(parseInt(date));
+export function ImgPost({ src, caption, owner }) {
+    //let formatDate = new Date(parseInt(date));
     return (
         <figure className="relative w-full">
             <img
@@ -20,9 +20,10 @@ export function ImgPost({ src, caption, date }) {
                         color="white"
                         className="text-[9px] font-normal"
                     >
-                        {`${formatDate.getFullYear()}/${
+                        {owner}
+                        {/* {`${formatDate.getFullYear()}/${
                             formatDate.getMonth() + 1
-                        }/${formatDate.getDate()}-${formatDate.getHours()}:${formatDate.getMinutes()}`}
+                        }/${formatDate.getDate()}-${formatDate.getHours()}:${formatDate.getMinutes()}`} */}
                     </Typography>
                 </div>
                 <IconButton variant="text" color="white" className="p-0">
